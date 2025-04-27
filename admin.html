@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-blue-100">
+    <nav class="bg-white shadow-md px-6 py-4">
+      <h1 class="text-xl font-bold text-blue-600">Admin Dashboard</h1>
+    </nav>
+
+    <div class="max-w-4xl mx-auto mt-6 p-6 bg-white rounded shadow">
+      <h2 class="text-lg font-semibold mb-4">Add New Book</h2>
+      <form>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            placeholder="Book Title"
+            class="border px-3 py-2 rounded"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Author Name"
+            class="border px-3 py-2 rounded"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Price ₹"
+            class="border px-3 py-2 rounded"
+            required
+          />
+          <input
+            type="url"
+            placeholder="Image URL"
+            class="border px-3 py-2 rounded"
+            required
+          />
+        </div>
+        <textarea
+          placeholder="Description"
+          class="border px-3 py-2 rounded mt-4 w-full"
+          required
+        ></textarea>
+        <button
+          type="submit"
+          class="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+        >
+          Add Book
+        </button>
+      </form>
+
+      <h2 class="text-lg font-semibold mt-8 mb-4">Manage Books</h2>
+      <div class="border p-4 rounded">
+        <p><strong>Book Title 1</strong> by Author - ₹299</p>
+        <div class="flex gap-2 mt-2">
+          <button class="bg-yellow-500 text-white px-4 py-1 rounded">
+            Edit
+          </button>
+          <button class="bg-red-600 text-white px-4 py-1 rounded">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

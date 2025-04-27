@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-blue-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-6 rounded shadow w-full max-w-md">
+      <h2 class="text-xl font-bold mb-4 text-blue-600 text-center">
+        User Login
+      </h2>
+      <form id="loginForm">
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="w-full border px-3 py-2 rounded"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="w-full border px-3 py-2 rounded"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        >
+          Login
+        </button>
+      </form>
+      <p class="text-sm mt-4 text-center">
+        Don't have an account?
+        <a href="register.html" class="text-blue-600 hover:underline"
+          >Register</a
+        >
+      </p>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Simulate checking against stored users (in this case, from localStorage)
+          const user = JSON.parse(localStorage.getItem("users")) || [];
+          const existingUser = user.find(
+            (u) => u.email === email && u.password === password
+          );
+
+          if (existingUser) {
+            // Check if the user has items in the cart
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            if (cart.length > 0) {
+              // If there are items in the cart, redirect to the cart page
+              window.location.href = "cart.html";
+            } else {
+              // If no items in the cart, redirect to index.html
+              window.location.href = "index.html";
+            }
+          } else {
+            // If user does not exist, show alert and inform them to sign up first
+            alert("You need to sign up first.");
+            window.location.href = "register.html";
+          }
+        });
+
+
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get entered credentials
+    const email = document.querySelector("input[type='email']").value;
+    const password = document.querySelector("input[type='password']").value;
+
+    // Check if user is registered (you can expand this to multiple users if needed)
+    const registeredUser = JSON.parse(localStorage.getItem("users")) || [];
+    const user = registeredUser.find((user) => user.email === email && user.password === password);
+
+    if (user) {
+      // Save user data to localStorage to indicate the user is logged in
+      localStorage.setItem("user", JSON.stringify(user));
+
+      // Check if the user has items in their cart, redirect accordingly
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      if (cartItems.length > 0) {
+        window.location.href = "cart.html"; // Go to cart if there are items
+      } else {
+        window.location.href = "index.html"; // Otherwise, go to index
+      }
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  });
+</script>
+
+    </script>
+  </body>
+</html>

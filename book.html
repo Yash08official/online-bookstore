@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/your-fontawesome-kit-code.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600">Online Bookstore</h1>
+      <a href="index.html" class="text-gray-700 hover:text-blue-600"
+        >← Back to Home</a
+      >
+    </nav>
+
+    <!-- Book Detail -->
+    <div
+      class="p-6 max-w-4xl mx-auto bg-blue-100 rounded shadow mt-6 flex flex-col md:flex-row gap-6"
+    >
+      <img
+        src="https://via.placeholder.com/200"
+        alt="Book Cover"
+        class="w-full md:w-1/3 rounded"
+      />
+      <div>
+        <h2 class="text-2xl font-semibold">Book Title 1</h2>
+        <p class="text-gray-600 mb-2">by Author Name</p>
+        <p class="text-gray-700 mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales
+          odio vitae nisl aliquam, nec ultricies lorem aliquet.
+        </p>
+        <p class="text-xl font-bold text-blue-600 mb-4">₹299</p>
+        <button
+          class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          onclick="addToCart()"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- More Books Coming Section -->
+    <section class="max-w-6xl mx-auto mt-12 px-6 py-12">
+      <h2 class="text-2xl font-bold mb-6 text-center">
+        More Books Coming Soon
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Book Card -->
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 2"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 2</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 2</p>
+          <p class="text-blue-600 font-bold">₹199</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 3"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 3</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 3</p>
+          <p class="text-blue-600 font-bold">₹249</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 4"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 4</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 4</p>
+          <p class="text-blue-600 font-bold">₹179</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 5"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 5</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 5</p>
+          <p class="text-blue-600 font-bold">₹349</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 6"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 6</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 6</p>
+          <p class="text-blue-600 font-bold">₹269</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 7"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 7</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 7</p>
+          <p class="text-blue-600 font-bold">₹319</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 8"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 8</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 8</p>
+          <p class="text-blue-600 font-bold">₹399</p>
+        </div>
+
+        <div class="bg-white rounded shadow p-4">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Book 9"
+            class="rounded mb-3"
+          />
+          <h3 class="font-semibold text-lg">Book Title 9</h3>
+          <p class="text-sm text-gray-600 mb-2">by Author 9</p>
+          <p class="text-blue-600 font-bold">₹279</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div
+        class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+      >
+        <!-- Company Info -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4">BookVerse</h4>
+          <p>&copy; 2025 BookVerse. All rights reserved.</p>
+          <p class="mt-2">
+            Created by <span class="font-semibold">Yash Wasankar</span>
+          </p>
+          <p class="mt-2">
+            Your favorite online bookstore, offering a wide selection of books
+            for every reader.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+          <ul>
+            <li><a href="#" class="hover:text-blue-300">Home</a></li>
+            <li><a href="#" class="hover:text-blue-300">Shop</a></li>
+            <li><a href="#" class="hover:text-blue-300">Best Sellers</a></li>
+            <li><a href="#" class="hover:text-blue-300">New Arrivals</a></li>
+            <li>
+              <a href="#" class="hover:text-blue-300">Customer Support</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Customer Service</h4>
+          <ul>
+            <li><a href="#" class="hover:text-blue-300">Help Center</a></li>
+            <li>
+              <a href="#" class="hover:text-blue-300">Returns & Exchanges</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-blue-300">Track Your Order</a>
+            </li>
+            <li><a href="#" class="hover:text-blue-300">Shipping Info</a></li>
+            <li><a href="#" class="hover:text-blue-300">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Social Media -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-blue-300" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="hover:text-blue-300" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="hover:text-blue-300" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="hover:text-blue-300" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <h4 class="font-semibold text-lg mt-6 mb-4">Contact Us</h4>
+          <address>
+            <p>123 Book Street, Fiction City</p>
+            <p>
+              <a href="mailto:support@bookverse.com">support@bookverse.com</a>
+            </p>
+            <p>Phone: +123-456-7890</p>
+          </address>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center mt-6 border-t border-gray-700 pt-4"
+      >
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-blue-300">Privacy</a>
+          <a href="#" class="hover:text-blue-300">Terms</a>
+          <a href="#" class="hover:text-blue-300">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function addToCart() {
+        alert("Book added to cart!");
+      }
+    </script>
+  </body>
+</html>
